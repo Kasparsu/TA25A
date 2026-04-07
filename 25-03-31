@@ -1,0 +1,101 @@
+# 📚 Lecture Summary — Meeting in General
+**Speaker:** Kaspar Martin Suursalu  
+**Duration:** ~1.5 hours  
+**Language:** Estonian  
+
+---
+
+## 🗂️ Topics Covered
+
+### 1. 🔁 Recap of Previous Session
+
+The session opened with a quick recap of what was covered last time, with the instructor noting he had prepared an AI-generated Markdown overview for anyone who needed a refresher. Topics mentioned:
+- Terminal color scheme customization
+- Git basics: `git status`, `git add`, `git commit`, `git branch`, `git push`
+- Commit messages written as Markdown bullet points — Git prefers a trailing blank line at the end
+
+---
+
+### 2. 📥 `git clone` — Getting Code from GitHub
+
+The practical focus shifted to **how to work across multiple machines** — the real-world scenario of committing at school and continuing at home (or vice versa).
+
+- **`git clone <url>`** — downloads a full copy of a GitHub repository including all history
+- After cloning, Git already knows the remote connection — `git push` works without re-specifying the origin
+- The cloned repo is in exactly the same state as it was when last pushed — you pick up right where you left off
+- Students were reminded to **always run `git status` first** when sitting down at a new machine, before making any changes
+
+---
+
+### 3. 📋 `git log` — Reading Commit History
+
+The instructor demonstrated `git log` as a way to inspect the history of a repo:
+
+- Shows each commit with its **hash**, **author**, **timestamp**, and **message**
+- The **commit hash** is a long unique string of letters and numbers — a fingerprint for that exact snapshot
+- You only need the **first 6–7 characters** of a hash to reference a specific commit in Git commands
+- `git log --oneline` was shown as a compact view — one commit per line
+- `git log --all` shows commits from all branches, not just the current one
+
+**Relatable meme:**  
+![Git commit meme](https://imgs.search.brave.com/jw47mmPsCsYRrW2bUUDQ9K24AH1gwy4uxpst2VPdYtc/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pLnBy/b2dyYW1tZXJodW1v/ci5pby8yMDI1LzEx/L2I2ZDljZTEzYmE0/YWRkNDJkNzQxOTAy/Mjg4ZjZlYmNmNDQz/ZTIyZjNiNmVlNTJk/NjRlZDJiNGYzMDMw/ZDlhZTUuanBlZw)  
+*"When I need to name the commit"*
+
+---
+
+### 4. 🔍 `git fetch` vs `git pull`
+
+A key distinction was taught — the difference between **checking** what's on GitHub vs **downloading** it:
+
+| Command | What it does |
+|---------|--------------|
+| `git fetch` | Checks GitHub for new commits — updates Git's knowledge of the remote, but does **not** change your local files |
+| `git pull` | Fetches **and** merges the latest changes into your current branch — actually updates your local code |
+
+**When to use which:**
+- Use `git fetch` + `git status` when you want to see what's changed before committing to downloading it
+- Use `git pull` when you're ready to bring your local branch up to date with GitHub
+- If you have uncommitted local changes, the instructor recommended committing first before pulling to avoid conflicts
+
+---
+
+### 5. 🌿 Git Branches
+
+The second half of the session introduced **branches** — one of Git's most powerful features:
+
+**Why branches?**
+- `main` (or `master`) should always contain working, stable code — ideally the version that is deployed
+- New features and experiments go into their own branches so they don't break the main codebase
+- Once a feature is complete and tested, it gets merged back into `main`
+
+**Branch commands covered:**
+
+| Command | What it does |
+|---------|--------------|
+| `git branch` | Lists all local branches; shows current branch with a `*` |
+| `git branch <name>` | Creates a new branch |
+| `git checkout <name>` | Switches to an existing branch |
+| `git checkout -b <name>` | Creates **and** switches to a new branch in one step |
+
+**Real-world branch workflow explained:**
+- `main` — stable, deployed code
+- `develop` (or similar) — where new features accumulate before release
+- Feature branches — short-lived branches for individual tasks, merged via pull requests
+
+> The instructor noted that merge conflicts (what happens when two people edit the same lines) would be covered in a future session.
+
+---
+
+## ✅ Session Outcome
+By the end of the class, students had:
+1. Cloned a repository and understood the full school-to-home workflow
+2. Used `git log` and understood commit hashes
+3. Understood the difference between `git fetch` and `git pull`
+4. Created and switched between branches with `git branch` and `git checkout`
+
+The session ended with the instructor wrapping up branches and promising to cover merge conflicts and pull requests in the next class. 🌿
+
+---
+
+> *"The smart thing to do before touching anything — always run git status first."*  
+> — Kaspar Martin Suursalu
